@@ -27,7 +27,7 @@ while True:
     try:
         address = int(i, 16)
     except ValueError:
-        print("Not a address!")
+        print("Not a valid address!")
         continue
     blockNumber = address // cacheLineSize
     print("Block Number: " + hex(blockNumber))
