@@ -1,10 +1,15 @@
+#!python3
 import math
 
 print("==== Cache Calculator ====")
 print("n-way Set-Associative Mode")
-n = int(input("n = "))
-cacheSize = int(input("Cache Size (Bytes) = "))
-cacheLineSize = int(input("Size of Cache Line (Bytes) = "))
+try:
+    n = int(input("n = "))
+    cacheSize = int(input("Cache Size (Bytes) = "))
+    cacheLineSize = int(input("Size of Cache Line (Bytes) = "))
+except ValueError:
+    print("Invalid value format!")
+    exit(1)
 if ((n <= 0) | (cacheSize <= 0) | (cacheLineSize <= 0)
         | (cacheSize % cacheLineSize != 0) | ((cacheSize // cacheLineSize) % n != 0)):
     print("Wrong values provided!")
